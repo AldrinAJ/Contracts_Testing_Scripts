@@ -1,1 +1,1 @@
-docker run -itd mythril:init
+docker run -itd --name myth mythril:init
