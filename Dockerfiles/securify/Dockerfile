@@ -64,4 +64,4 @@ ENV LD_LIBRARY_PATH /sec/securify/staticanalysis/libfunctors
 RUN cd /sec/securify/ && securify staticanalysis/testContract.sol
 
 #ENTRYPOINT ["python3.7", "securify/__main__.py"]
-ENTRYPOINT["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
