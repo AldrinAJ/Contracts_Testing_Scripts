@@ -6,6 +6,9 @@ RUN apt-get update && apt-get install -y\
     software-properties-common\
     locales
 
+# install vim
+RUN apt-get install -y vim 
+
 # set correct locale
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
