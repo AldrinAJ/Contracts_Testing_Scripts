@@ -6,3 +6,4 @@
 # Todo
 - Add more tools: Securify, Slither, ECFChecker, Sereum
 - Add vulnerable contracts
+- Upgrade run scripts
