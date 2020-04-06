@@ -56,12 +56,11 @@ RUN cd /sec/securify/staticanalysis/souffle_analysis && \
         --output-dir=/sec/securify/staticanalysis/facts_out \
         -L../libfunctors -w analysis.dl
 
-
 ENV LD_LIBRARY_PATH /sec/securify/staticanalysis/libfunctors
 
 # Check that everything works and create a cache of the available patterns
 # Should be removed
-RUN cd /sec/securify/ && securify staticanalysis/testContract.sol
+#RUN cd /sec/securify/ && securify staticanalysis/testContract.sol
 
 #ENTRYPOINT ["python3.7", "securify/__main__.py"]
 ENTRYPOINT ["/bin/bash"]
