@@ -1,9 +1,13 @@
 # This repository for testing various vulnerability finding tools.
-- Supporting tool list: Oyente, Manticore, and Mythril.
+- Supporting tool list: Oyente, Manticore, Mythril, Securify and Slither.
 - There are some scripts to run various tools.
 - There are smart contracts code that involves known attacks.
 
 # Todo
-- Add more tools: Securify, Slither, ECFChecker, Sereum
 - Add vulnerable contracts
 - Upgrade run scripts
+
+# Result of todo
+- Not supported tools: ECFChecker, Sereum
+  - ECFChecker is an ova form.
+  - Sereum is not available now. 
