@@ -1,5 +1,5 @@
 # This repository for testing various vulnerability finding tools.
-- Supporting tool list: Oyente, Manticore, Mythril, Securify and Slither.
+- Support tools: Oyente, Manticore, Mythril, Securify and Slither.
 - There are some scripts to run various tools.
 - There are smart contracts code that involves known attacks.
 
