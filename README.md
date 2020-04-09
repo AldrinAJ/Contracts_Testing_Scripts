@@ -1,4 +1,4 @@
-# This repository for testing various vulnerability finding tools.
+# This repository to test Ehtereum security analysis tools.
 - Support tools: Oyente, Manticore, Mythril, Securify and Slither.
 - There are some scripts to run various tools.
 - There are smart contracts code that involves known attacks.
