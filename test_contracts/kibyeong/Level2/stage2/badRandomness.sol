@@ -1,10 +1,8 @@
 contract GuessTheRandomNumberChallenge {
     uint8 answer;
     int var1 = 8;
-int var2 = var1 * 82;
-int var3 = var1 + var2;
-
-
+    int var2 = var1 * 82;
+    int var3 = var1 + var2;
 
     function setAnswer() public view returns (bool) {
         if(var1 >= var3){
