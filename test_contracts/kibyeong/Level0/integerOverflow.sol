@@ -1,4 +1,4 @@
-contract integerOverflow {
+contract IntegerOverflow {
 
     mapping (address => uint256) public balanceOf;
         
