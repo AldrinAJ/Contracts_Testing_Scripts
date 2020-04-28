@@ -12,3 +12,7 @@
 - Not supported tools: ECFChecker, Sereum
   - ECFChecker is an ova form.
   - Sereum is not available now. 
+
+
+# Reference
+- https://github.com/uni-due-syssec/eth-reentrancy-attack-patterns
