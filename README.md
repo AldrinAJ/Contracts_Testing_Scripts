@@ -4,8 +4,8 @@
 - There are smart contracts code that involves known attacks.
 
 # Todo
-- [] Add vulnerable contracts
-- [] Write python scripts to make this be fully-automated
+- [ ] Add vulnerable contracts
+- [ ] Write python scripts to make this be fully-automated
 
 # Finish
 - [x] Write run.sh for each tool
