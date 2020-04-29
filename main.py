@@ -1,5 +1,5 @@
 import sys
-import subprocess
+import os
 
 Tools = ["oyente", "mythril", "manticore", "securify", "slither"]
 
@@ -22,7 +22,7 @@ def main():
 
         # Executing the shell command
         # print(dockerExec.split(" "))
-        subprocess.run(dockerExec, shell=True, check=True)
+        os.system(dockerExec)
 
 
 if __name__ == "__main__":
