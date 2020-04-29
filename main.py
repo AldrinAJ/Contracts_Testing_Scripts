@@ -14,7 +14,9 @@ def buildExec(contId, solidityName):
 def main():
     if len(sys.argv) == 3:
         contId = sys.argv[1]
-        solidityName = sys.argv[2] + "_" + contId + ".sol"
+
+        # without ext
+        solidityName = sys.argv[2] + "_" + contId
         dockerExec = buildExec(contId, solidityName)
         # Executing the shell command
         os.system(dockerExec)
