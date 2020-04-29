@@ -21,8 +21,8 @@ def main():
         # print(dockerExec)
 
         # Executing the shell command
-        print(dockerExec.split(" "))
-        #subprocess.run(dockerExec.split(" "), shell=True, check=True)
+        # print(dockerExec.split(" "))
+        subprocess.run(dockerExec, shell=True, check=True)
 
 
 if __name__ == "__main__":
