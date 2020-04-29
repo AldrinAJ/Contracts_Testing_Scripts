@@ -3,10 +3,13 @@
 - There are some scripts to run various tools.
 - There are smart contracts code that involves known attacks.
 
-
 # Todo
-- Add vulnerable contracts
-- Upgrade run scripts
+[] Add vulnerable contracts
+[] Write python scripts to make this be fully-automated
+
+# Finish
+[x] Write run.sh for each tool
+[x] Grasp how to run each tool and identify paths that each analysis result will be placed.
 
 # Result of todo
 - Not supported tools: ECFChecker, Sereum
