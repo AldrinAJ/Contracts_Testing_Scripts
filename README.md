@@ -5,11 +5,13 @@
 
 # Todo
 - [ ] Add vulnerable contracts.
-- [ ] Write python scripts to make this be fully-automated.
+- [ ] Upgrade the python script to support all-in-one test
+- [ ] Support MythX
 
 # Finish
 - [x] Write run.sh for each tool.
 - [x] Grasp how to run each tool and identify paths that each analysis result will be placed.
+- [x] Implement python scrpts to support full-automation
 
 # Result of todo
 - Not supported tools: ECFChecker, Sereum
