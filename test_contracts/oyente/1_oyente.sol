@@ -1,4 +1,4 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.16;
 
 contract IntermediaryCallback {
     function registerIntermediary(address what) public payable;
