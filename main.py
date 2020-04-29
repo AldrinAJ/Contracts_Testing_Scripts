@@ -12,17 +12,16 @@ def buildExec(contId, solidityName):
 
 
 def main():
-    if len(sys.argv) != 3:
-        print("Usage: main.py [containerID] [solidityName]")
-    else:
+    if len(sys.argv) == 3:
         contId = sys.argv[1]
-        solidityName = sys.argv[2]
+        solidityName = sys.argv[2] + "_" + contId + ".sol"
         dockerExec = buildExec(contId, solidityName)
-        # print(dockerExec)
-
         # Executing the shell command
-        # print(dockerExec.split(" "))
         os.system(dockerExec)
+    elif len(sys.argv) == 4:
+        print(sys.argv[2].split("#"))
+    else:
+        print("Usage: main.py <-i> [containerID]+ [targetLevel]")
 
 
 if __name__ == "__main__":
