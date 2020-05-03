@@ -3,7 +3,7 @@ pragma solidity ^0.6.4;
 contract IntegerOverflow {
     mapping (address => uint256) public balanceOf;
     function getCustom () public returns (uint256) {
-        return 444;
+        return 0xFFFFFFFFFFFFFFFF;
     }
 }
 
