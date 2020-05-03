@@ -12,7 +12,6 @@ contract Alice {
 
     function transfer(address _to, uint256 _value) public {
        uint256 sample = io.getCustom();
-       balanceOf[_to] += sample + 1;
-       //balanceOf[_to] += sample + _value;
+       balanceOf[_to] += sample + _value;
     }
 }
