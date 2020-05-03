@@ -1,0 +1,164 @@
+[0;31mSeverity:    LOW
+Pattern:     Benign Reentrancy
+Description: Reentrancy is equivalent with two consecutive calls of
+             the function
+Type:        Violation
+Contract:    Alice
+Line:        14
+Source: 
+>     function transfer(address _to, uint256 _value) public {
+>        uint256 sample = io.getCustom();
+>                         ^^^^^^^^^^^^^^
+>        balanceOf[_to] += sample + 1;
+
+[0m
+[0;31mSeverity:    INFO
+Pattern:     Constable State Variables
+Description: State variables that do not change should be declared as
+             constants.
+Type:        Violation
+Contract:    Alice
+Line:        10
+Source: 
+>     mapping (address => uint256) public balanceOf;
+>     address _t;
+>     ^^^^^^^^^^
+>     IntegerOverflow io = IntegerOverflow(_t);
+
+[0m
+[0;31mSeverity:    INFO
+Pattern:     Constable State Variables
+Description: State variables that do not change should be declared as
+             constants.
+Type:        Violation
+Contract:    Alice
+Line:        11
+Source: 
+>     address _t;
+>     IntegerOverflow io = IntegerOverflow(_t);
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 
+
+[0m
+[0;31mSeverity:    LOW
+Pattern:     External Calls of Functions
+Description: A public function that is never called within the
+             contract should be marked as external
+Type:        Violation
+Contract:    IntegerOverflow
+Line:        3
+Source: 
+>     mapping (address => uint256) public balanceOf;
+>     function getCustom () public returns (uint256) {
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>         return 444;
+
+[0m
+[0;31mSeverity:    LOW
+Pattern:     External Calls of Functions
+Description: A public function that is never called within the
+             contract should be marked as external
+Type:        Violation
+Contract:    Alice
+Line:        13
+Source: 
+> 
+>     function transfer(address _to, uint256 _value) public {
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>        uint256 sample = io.getCustom();
+
+[0m
+[0;31mSeverity:    MEDIUM
+Pattern:     Missing Input Validation
+Description: Method arguments must be sanitized before they are used
+             in computations.
+Type:        Violation
+Contract:    Alice
+Line:        13
+Source: 
+> 
+>     function transfer(address _to, uint256 _value) public {
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>        uint256 sample = io.getCustom();
+
+[0m
+[0;31mSeverity:    INFO
+Pattern:     State variables default visibility
+Description: Visibility of state variables should be stated explicitly
+Type:        Violation
+Contract:    Alice
+Line:        10
+Source: 
+>     mapping (address => uint256) public balanceOf;
+>     address _t;
+>     ^^^^^^^^^^
+>     IntegerOverflow io = IntegerOverflow(_t);
+
+[0m
+[0;31mSeverity:    INFO
+Pattern:     State variables default visibility
+Description: Visibility of state variables should be stated explicitly
+Type:        Violation
+Contract:    Alice
+Line:        11
+Source: 
+>     address _t;
+>     IntegerOverflow io = IntegerOverflow(_t);
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 
+
+[0m
+[0;31mSeverity:    HIGH
+Pattern:     Unhandled Exception
+Description: The return value of statements that may return error
+             values must be explicitly checked.
+Type:        Violation
+Contract:    Alice
+Line:        14
+Source: 
+>     function transfer(address _to, uint256 _value) public {
+>        uint256 sample = io.getCustom();
+>                         ^^^^^^^^^^^^^^
+>        balanceOf[_to] += sample + 1;
+
+[0m
+[0;31mSeverity:    HIGH
+Pattern:     Uninitialized State Variable
+Description: State variables should be explicitly initialized.
+Type:        Violation
+Contract:    Alice
+Line:        10
+Source: 
+>     mapping (address => uint256) public balanceOf;
+>     address _t;
+>     ^^^^^^^^^^
+>     IntegerOverflow io = IntegerOverflow(_t);
+
+[0m
+[0;31mSeverity:    CRITICAL
+Pattern:     Unrestricted write to storage
+Description: Contract fields that can be modified by any user must be
+             inspected.
+Type:        Violation
+Contract:    Alice
+Line:        15
+Source: 
+>        uint256 sample = io.getCustom();
+>        balanceOf[_to] += sample + 1;
+>        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>        //balanceOf[_to] += sample + _value;
+
+[0m
+[0;31mSeverity:    INFO
+Pattern:     Unused State Variable
+Description: Unused state variables should be removed.
+Type:        Violation
+Contract:    IntegerOverflow
+Line:        2
+Source: 
+> contract IntegerOverflow {
+>     mapping (address => uint256) public balanceOf;
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>     function getCustom () public returns (uint256) {
+
+[0m
