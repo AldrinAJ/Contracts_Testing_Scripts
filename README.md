@@ -5,6 +5,11 @@
 
 # Todo
 - [ ] Add vulnerable contracts. (in progress)
+  - [x] integer overflow
+  - [ ] integer underflow
+  - [ ] bad randomness
+  - [ ] re-entrancy
+  - [ ] self-destruct
 - [ ] Upgrade the python script to support all-in-one test (not important)
 - [ ] Support MythX
 
