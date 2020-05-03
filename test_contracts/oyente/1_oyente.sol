@@ -3,11 +3,6 @@ contract IntegerOverflow {
     function getCustom () public returns (uint256) {
         return 444;
     }
-    function transfer(address _to, uint256 _value) public {
-        require(balanceOf[msg.sender] >= _value);
-        balanceOf[msg.sender] -= _value;
-        balanceOf[_to] += _value;
-    }
 }
 
 contract Alice {
