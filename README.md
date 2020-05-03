@@ -4,8 +4,8 @@
 - There are smart contracts code that involves known attacks.
 
 # Todo
-- [ ] Add vulnerable contracts.
-- [ ] Upgrade the python script to support all-in-one test
+- [ ] Add vulnerable contracts. (in progress)
+- [ ] Upgrade the python script to support all-in-one test (not important)
 - [ ] Support MythX
 
 # Finish
