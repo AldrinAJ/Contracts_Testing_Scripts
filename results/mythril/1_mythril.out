@@ -15,14 +15,14 @@ sample + 1
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , value: 0x0
-Caller: [SOMEGUY], function: transfer(address,uint256), txdata: 0xa9059cbb00000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+Caller: [SOMEGUY], function: transfer(address,uint256), txdata: 0xa9059cbb00000000000000000000000000402010200401010008002004800001104000040000000000000000000000000000000000000000000000000000000000000000, value: 0x0
 
 ==== State change after external call ====
 SWC ID: 107
@@ -41,14 +41,14 @@ balanceOf[_to] += sample + 1
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x8b, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , value: 0x0
-Caller: [CREATOR], function: transfer(address,uint256), txdata: 0xa9059cbb00000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+Caller: [SOMEGUY], function: transfer(address,uint256), txdata: 0xa9059cbb40404040404040404040404020020840400280204040400010014001020800044040404040404040404040404040404040404040404040404040404040404040, value: 0x0
 
 ==== Integer Overflow ====
 SWC ID: 101
@@ -67,15 +67,15 @@ balanceOf[_to] += sample + 1
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , value: 0x0
-Caller: [SOMEGUY], function: transfer(address,uint256), txdata: 0xa9059cbb00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
-Caller: [CREATOR], function: transfer(address,uint256), txdata: 0xa9059cbb00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+Caller: [SOMEGUY], function: transfer(address,uint256), txdata: 0xa9059cbb40404040404040404040404010082004200840400102040001000108401001404040404040404040404040404040404040404040404040404040404040404040, value: 0x0
+Caller: [SOMEGUY], function: transfer(address,uint256), txdata: 0xa9059cbb40404040404040404040404010082004200840400102040001000108401001404040404040404040404040404040404040404040404040404040404040404040, value: 0x0
 
 ==== State change after external call ====
 SWC ID: 107
@@ -94,13 +94,13 @@ balanceOf[_to] += sample + 1
 --------------------
 Initial State:
 
-Account: [CREATOR], balance: 0x8b, nonce:0, storage:{}
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
 Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
 Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
 
 Transaction Sequence:
 
 Caller: [CREATOR], calldata: , value: 0x0
-Caller: [CREATOR], function: transfer(address,uint256), txdata: 0xa9059cbb00000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+Caller: [SOMEGUY], function: transfer(address,uint256), txdata: 0xa9059cbb40404040404040404040404020020840400280204040400010014001020800044040404040404040404040404040404040404040404040404040404040404040, value: 0x0
 
 
