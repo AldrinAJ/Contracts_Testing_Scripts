@@ -1,0 +1,10 @@
+2020-04-29 05:31:16,249: [1984] m.main:[34mINFO:[0m Registered plugins: DetectReentrancyAdvanced, DetectUninitializedMemory, DetectManipulableBalance, DetectIntegerOverflow, DetectUninitializedStorage, DetectInvalid, DetectSuicidal, DetectUnusedRetVal, DetectDelegatecall, DetectExternalCallAndLeak, DetectEnvInstruction, DetectReentrancySimple
+2020-04-29 05:31:16,249: [1984] m.main:[34mINFO:[0m Beginning analysis
+2020-04-29 05:31:16,256: [1984] m.e.manticore:[34mINFO:[0m Starting symbolic create contract
+2020-04-29 05:31:16,266: [1984] m.e.manticore:[31mERROR:[0m Errors : Invalid solc compilation /tmp/tmpezeqglu_.sol:1:1: Error: Expected pragma, import directive or contract/interface/library definition.
+../../test_scripts/manticore/1_manticore.sol
+^
+
+. Solidity failed to generate bytecode for your contract. Check if all the abstract functions are implemented. 
+2020-04-29 05:31:16,380: [2017] m.c.manticore:[34mINFO:[0m Generated testcase No. 0 - NO STATE RESULT (?)(0 txs)
+2020-04-29 05:31:16,402: [1984] m.c.manticore:[34mINFO:[0m Results in /app/Contracts_Testing_Scripts/results/manticore/mcore_mcrfx179
