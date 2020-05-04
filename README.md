@@ -9,7 +9,7 @@
   - [x] integer underflow
   - [x] bad randomness
   - [ ] re-entrancy
-  - [ ] self-destruct
+  - [x] self-destruct
 - [ ] Upgrade the python script to support all-in-one test (not important)
 - [ ] Support MythX
 
