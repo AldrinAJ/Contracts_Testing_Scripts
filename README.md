@@ -23,5 +23,9 @@
   - ECFChecker is an ova form.
   - Sereum is not available now. 
 
+# Test example naming rule
+- [1- Basic types of vulnerability]_[toolname]
+- [1-1 - False positive case]
+
 # Reference
 - https://github.com/uni-due-syssec/eth-reentrancy-attack-patterns
