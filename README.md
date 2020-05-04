@@ -8,8 +8,8 @@
   - [x] integer overflow
   - [x] integer underflow
   - [x] bad randomness
-  - [ ] re-entrancy
   - [x] self-destruct
+  - [ ] re-entrancy
 - [ ] Upgrade the python script to support all-in-one test (not important)
 - [ ] Support MythX
 
