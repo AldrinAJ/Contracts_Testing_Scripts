@@ -24,8 +24,8 @@
   - Sereum is not available now. 
 
 # Test example naming rule
-- [1- Basic types of vulnerability]_[toolname]
-- [1-1 - False positive case]
+- [1- Basic types of vulnerability]_[toolname].sol
+- [1-1 - False positive case]_[toolname].sol
 
 # Reference
 - https://github.com/uni-due-syssec/eth-reentrancy-attack-patterns
