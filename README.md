@@ -7,7 +7,7 @@
 - [ ] Add vulnerable contracts. (in progress)
   - [x] integer overflow
   - [x] integer underflow
-  - [ ] bad randomness
+  - [x] bad randomness
   - [ ] re-entrancy
   - [ ] self-destruct
 - [ ] Upgrade the python script to support all-in-one test (not important)
