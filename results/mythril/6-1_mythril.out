@@ -1,0 +1,53 @@
+==== Unprotected Selfdestruct ====
+SWC ID: 106
+Severity: High
+Contract: SimpleSuicide
+Function name: sudicideAnyone()
+PC address: 77
+Estimated Gas Usage: 121 - 216
+The contract can be killed by anyone.
+Anyone can kill this contract and withdraw its balance to an arbitrary address.
+--------------------
+In file: 6-1_mythril.sol:4
+
+selfdestruct(msg.sender)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [ATTACKER], function: sudicideAnyone(), txdata: 0xa56a3b5a, value: 0x0
+
+==== Unchecked Call Return Value ====
+SWC ID: 104
+Severity: Low
+Contract: Owner
+Function name: die()
+PC address: 345
+Estimated Gas Usage: 2089 - 38251
+The return value of a message call is not checked.
+External calls return a boolean value. If the callee contract halts with an exception, 'false' is returned and execution continues in the caller. It is usually recommended to wrap external calls into a require statement to prevent unexpected states.
+--------------------
+In file: 6-1_mythril.sol:12
+
+suicider.delegatecall(abi.encodeWithSignature("suicideAnyone()"))
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [CREATOR], function: die(), txdata: 0x35f46994, value: 0x0
+
+

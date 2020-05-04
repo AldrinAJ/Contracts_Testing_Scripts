@@ -1,0 +1,110 @@
+[0;31mSeverity:    INFO
+Pattern:     Constable State Variables
+Description: State variables that do not change should be declared as
+             constants.
+Type:        Violation
+Contract:    Owner
+Line:        9
+Source: 
+> contract Owner {
+>     address suicider = 0xE0f5206BBD039e7b0592d8918820024e2a7437b9;
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>     function die () public
+
+[0m
+[0;31mSeverity:    LOW
+Pattern:     External Calls of Functions
+Description: A public function that is never called within the
+             contract should be marked as external
+Type:        Violation
+Contract:    SimpleSuicide
+Line:        2
+Source: 
+> contract SimpleSuicide {
+>     function suicideAnyone() public
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>     {
+
+[0m
+[0;31mSeverity:    LOW
+Pattern:     External Calls of Functions
+Description: A public function that is never called within the
+             contract should be marked as external
+Type:        Violation
+Contract:    Owner
+Line:        10
+Source: 
+>     address suicider = 0xE0f5206BBD039e7b0592d8918820024e2a7437b9;
+>     function die () public
+>     ^^^^^^^^^^^^^^^^^^^^^^
+>     {
+
+[0m
+[0;31mSeverity:    INFO
+Pattern:     Low Level Calls
+Description: Usage of <address>.call should be avoided
+Type:        Violation
+Contract:    Owner
+Line:        12
+Source: 
+>     {
+>         suicider.delegatecall(abi.encodeWithSignature("suicideAnyone()"));
+>         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>     }
+
+[0m
+[0;31mSeverity:    INFO
+Pattern:     State variables default visibility
+Description: Visibility of state variables should be stated explicitly
+Type:        Violation
+Contract:    Owner
+Line:        9
+Source: 
+> contract Owner {
+>     address suicider = 0xE0f5206BBD039e7b0592d8918820024e2a7437b9;
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>     function die () public
+
+[0m
+[0;33mSeverity:    CRITICAL
+Pattern:     Unrestricted Ether Flow
+Description: The execution of ether flows should be restricted to an
+             authorized set of users.
+Type:        Warning
+Contract:    Owner
+Line:        12
+Source: 
+>     {
+>         suicider.delegatecall(abi.encodeWithSignature("suicideAnyone()"));
+>         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>     }
+
+[0m
+[0;31mSeverity:    CRITICAL
+Pattern:     Unrestricted call to selfdestruct
+Description: Calls to selfdestruct that can be triggered by any user
+             must be inspected.
+Type:        Violation
+Contract:    SimpleSuicide
+Line:        4
+Source: 
+>     {
+>         selfdestruct(msg.sender);
+>         ^^^^^^^^^^^^^^^^^^^^^^^^
+>     }
+
+[0m
+[0;31mSeverity:    MEDIUM
+Pattern:     Unused Return Pattern
+Description: The value returned by an external function call is never
+             used
+Type:        Violation
+Contract:    Owner
+Line:        12
+Source: 
+>     {
+>         suicider.delegatecall(abi.encodeWithSignature("suicideAnyone()"));
+>         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>     }
+
+[0m
