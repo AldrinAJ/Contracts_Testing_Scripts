@@ -1,0 +1,27 @@
+==== Unprotected Selfdestruct ====
+SWC ID: 106
+Severity: High
+Contract: SimpleSuicide
+Function name: sudicideAnyone()
+PC address: 77
+Estimated Gas Usage: 121 - 216
+The contract can be killed by anyone.
+Anyone can kill this contract and withdraw its balance to an arbitrary address.
+--------------------
+In file: 6_mythril.sol:4
+
+selfdestruct(msg.sender)
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x1, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x1, nonce:0, storage:{}
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [ATTACKER], function: sudicideAnyone(), txdata: 0xa56a3b5a, value: 0x0
+
+
