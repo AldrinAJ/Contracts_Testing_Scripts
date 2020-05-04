@@ -11,7 +11,8 @@ contract Alice {
     IntegerOverflow io = IntegerOverflow(_t);
 
     function transfer(address _to, uint256 _value) public {
-       uint256 sample = io.getCustom();
-       balanceOf[_to] += sample + _value;
+        require(balanceOf[msg.sender] >= _value);
+        uint256 sample = io.getCustom();
+        balanceOf[_to] = sample + _value;
     }
 }

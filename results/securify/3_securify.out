@@ -51,7 +51,7 @@ Source:
 > 
 >     function transfer(address _to, uint256 _value) public {
 >     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
->        require(balanceOf[msg.sender] >= _value);
+>        require(balanceOf[msg.sender] - _value >= 0);
 
 [0m
 [0;31mSeverity:    MEDIUM
@@ -65,7 +65,7 @@ Source:
 > 
 >     function transfer(address _to, uint256 _value) public {
 >     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
->        require(balanceOf[msg.sender] >= _value);
+>        require(balanceOf[msg.sender] - _value >= 0);
 
 [0m
 [0;31mSeverity:    MEDIUM
@@ -75,10 +75,10 @@ Type:        Violation
 Contract:    Alice
 Line:        15
 Source: 
->        require(balanceOf[msg.sender] >= _value);
+>        require(balanceOf[msg.sender] - _value >= 0);
 >        uint256 sample = io.getCustom();
 >                         ^^^^^^^^^^^^^^
->        balanceOf[_to] += sample + 1;
+>        balanceOf[_to] += sample - 1;
 
 [0m
 [0;31mSeverity:    INFO
@@ -115,10 +115,10 @@ Type:        Violation
 Contract:    Alice
 Line:        15
 Source: 
->        require(balanceOf[msg.sender] >= _value);
+>        require(balanceOf[msg.sender] - _value >= 0);
 >        uint256 sample = io.getCustom();
 >                         ^^^^^^^^^^^^^^
->        balanceOf[_to] += sample + 1;
+>        balanceOf[_to] += sample - 1;
 
 [0m
 [0;31mSeverity:    HIGH

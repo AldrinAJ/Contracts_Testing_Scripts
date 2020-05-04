@@ -1,0 +1,53 @@
+==== Integer Underflow ====
+SWC ID: 101
+Severity: High
+Contract: Alice
+Function name: transfer(address,uint256)
+PC address: 421
+Estimated Gas Usage: 7837 - 62919
+The binary subtraction can underflow.
+The operands of the subtraction operation are not sufficiently constrained. The subtraction could therefore result in an integer underflow. Prevent the underflow by checking inputs or ensure sure that the underflow is caught by an assertion.
+--------------------
+In file: 4_mythril.sol:15
+
+sample - _value
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x2, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [CREATOR], function: transfer(address,uint256), txdata: 0xa9059cbb00000000000000000000000000000000000000000000000000000000000000002080408040804080208040802001808080808080808080808080800000000001, value: 0x0
+
+==== State change after external call ====
+SWC ID: 107
+Severity: Low
+Contract: Alice
+Function name: transfer(address,uint256)
+PC address: 486
+Estimated Gas Usage: 7837 - 62919
+Persistent state write after call
+The contract account state is changed after an external call to a fixed address. Consider that the called contract could re-enter the function before this state change takes place
+--------------------
+In file: 4_mythril.sol:15
+
+balanceOf[_to] = sample - _value
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x8b, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+Account: [SOMEGUY], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , value: 0x0
+Caller: [CREATOR], function: transfer(address,uint256), txdata: 0xa9059cbb00000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000, value: 0x0
+
+

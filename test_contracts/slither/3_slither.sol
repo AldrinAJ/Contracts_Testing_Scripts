@@ -1,6 +1,6 @@
 pragma solidity ^0.6.4;
 
-contract IntegerOverflow {
+contract IntegerUnderflow {
     mapping (address => uint256) public balanceOf;
     function getCustom () public returns (uint256) {
         return 0xFFFFFFFFFFFFFFFF;
@@ -10,10 +10,10 @@ contract IntegerOverflow {
 contract Alice {
     mapping (address => uint256) public balanceOf;
     address constant _t = 0xE0f5206BBD039e7b0592d8918820024e2a7437b9;
-    IntegerOverflow io = IntegerOverflow(_t);
+    IntegerUnderflow io = IntegerUnderflow(_t);
 
     function transfer(address _to) public {
        uint256 sample = io.getCustom();
-       balanceOf[_to] = sample + 1;
+       balanceOf[_to] = sample - 1;
     }
 }
