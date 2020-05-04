@@ -6,7 +6,7 @@
 # Todo
 - [ ] Add vulnerable contracts. (in progress)
   - [x] integer overflow
-  - [ ] integer underflow
+  - [x] integer underflow
   - [ ] bad randomness
   - [ ] re-entrancy
   - [ ] self-destruct

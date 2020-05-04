@@ -1,0 +1,123 @@
+[0;31mSeverity:    INFO
+Pattern:     Constable State Variables
+Description: State variables that do not change should be declared as
+             constants.
+Type:        Violation
+Contract:    GuessTheRandomNumberChallenge
+Line:        8
+Source: 
+> contract GuessTheRandomNumberChallenge {
+>     address _t;
+>     ^^^^^^^^^^
+>     AnswerCreator ac = AnswerCreator(_t);
+
+[0m
+[0;31mSeverity:    INFO
+Pattern:     Constable State Variables
+Description: State variables that do not change should be declared as
+             constants.
+Type:        Violation
+Contract:    GuessTheRandomNumberChallenge
+Line:        9
+Source: 
+>     address _t;
+>     AnswerCreator ac = AnswerCreator(_t);
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 
+
+[0m
+[0;31mSeverity:    LOW
+Pattern:     External Calls of Functions
+Description: A public function that is never called within the
+             contract should be marked as external
+Type:        Violation
+Contract:    AnswerCreator
+Line:        2
+Source: 
+> contract AnswerCreator {
+>     function getSeed (bytes32 seed) public returns (bytes32) {
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>         return seed;
+
+[0m
+[0;31mSeverity:    LOW
+Pattern:     External Calls of Functions
+Description: A public function that is never called within the
+             contract should be marked as external
+Type:        Violation
+Contract:    GuessTheRandomNumberChallenge
+Line:        11
+Source: 
+> 
+>     function setAnswer() public returns (bytes32)
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>     {
+
+[0m
+[0;31mSeverity:    MEDIUM
+Pattern:     Missing Input Validation
+Description: Method arguments must be sanitized before they are used
+             in computations.
+Type:        Violation
+Contract:    AnswerCreator
+Line:        2
+Source: 
+> contract AnswerCreator {
+>     function getSeed (bytes32 seed) public returns (bytes32) {
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>         return seed;
+
+[0m
+[0;31mSeverity:    INFO
+Pattern:     State variables default visibility
+Description: Visibility of state variables should be stated explicitly
+Type:        Violation
+Contract:    GuessTheRandomNumberChallenge
+Line:        8
+Source: 
+> contract GuessTheRandomNumberChallenge {
+>     address _t;
+>     ^^^^^^^^^^
+>     AnswerCreator ac = AnswerCreator(_t);
+
+[0m
+[0;31mSeverity:    INFO
+Pattern:     State variables default visibility
+Description: Visibility of state variables should be stated explicitly
+Type:        Violation
+Contract:    GuessTheRandomNumberChallenge
+Line:        9
+Source: 
+>     address _t;
+>     AnswerCreator ac = AnswerCreator(_t);
+>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 
+
+[0m
+[0;31mSeverity:    HIGH
+Pattern:     Unhandled Exception
+Description: The return value of statements that may return error
+             values must be explicitly checked.
+Type:        Violation
+Contract:    GuessTheRandomNumberChallenge
+Line:        13
+Source: 
+>     {
+>         bytes32 seed = ac.getSeed(blockhash(block.number - 1));
+>                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>         bytes32 answer = bytes32(keccak256(abi.encodePacked(seed)));
+
+[0m
+[0;31mSeverity:    HIGH
+Pattern:     Uninitialized State Variable
+Description: State variables should be explicitly initialized.
+Type:        Violation
+Contract:    GuessTheRandomNumberChallenge
+Line:        8
+Source: 
+> contract GuessTheRandomNumberChallenge {
+>     address _t;
+>     ^^^^^^^^^^
+>     AnswerCreator ac = AnswerCreator(_t);
+
+[0m
