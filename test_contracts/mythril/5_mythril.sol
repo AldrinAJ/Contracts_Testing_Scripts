@@ -10,7 +10,7 @@ contract GuessTheRandomNumberChallenge {
 
     function setAnswer() public returns (bytes32)
     {
-        bytes32 seed = ac.getSeed(blockhash(block.number - 1));
+        bytes32 seed = ac.getSeed(blockhash(block.timestamp - 1));
         bytes32 answer = bytes32(keccak256(abi.encodePacked(seed)));
         return answer;
     }
