@@ -1,1 +1,1 @@
-tmux attach -t $1
+tmux attach -t remote
