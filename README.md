@@ -10,7 +10,7 @@
   - [x] bad randomness
   - [x] self-destruct
   - [ ] re-entrancy
-- [ ] Upgrade the python script to support all-in-one test (not important)
+- [x] Upgrade the python script to support all-in-one test (not important)
 - [ ] Support MythX, and smartcheck
 
 # Finish
