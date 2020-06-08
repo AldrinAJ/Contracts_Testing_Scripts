@@ -1,0 +1,9 @@
+digraph{
+0[label="Node Type: END_IF 0
+
+EXPRESSION:
+success = true
+
+IRs:
+success(bool) := True(bool)"];
+}

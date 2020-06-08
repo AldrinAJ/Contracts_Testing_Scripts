@@ -1,0 +1,67 @@
+digraph{
+0[label="Node Type: ENTRY_POINT 0
+"];
+0->1;
+1[label="Node Type: IF 1
+
+EXPRESSION:
+true
+
+IRs:
+CONDITION True"];
+1->2;
+1->6;
+2[label="Node Type: EXPRESSION 2
+
+EXPRESSION:
+someFunc()
+
+IRs:
+INTERNAL_CALL, DAO.someFunc()()"];
+2->3;
+3[label="Node Type: EXPRESSION 3
+
+EXPRESSION:
+require(bool)(success)
+
+IRs:
+TMP_1 = SOLIDITY_CALL require(bool)(success)"];
+3->4;
+4[label="Node Type: NEW VARIABLE 4
+
+EXPRESSION:
+amountToWithdraw = userBalances[msg.sender]
+
+IRs:
+REF_0(uint256) -> userBalances[msg.sender]
+amountToWithdraw(uint256) := REF_0(uint256)"];
+4->5;
+5[label="Node Type: EXPRESSION 5
+
+EXPRESSION:
+userBalances[msg.sender] = 0
+
+IRs:
+REF_1(uint256) -> userBalances[msg.sender]
+REF_1 (->userBalances) := 0(uint256)"];
+5->8;
+6[label="Node Type: EXPRESSION 6
+
+EXPRESSION:
+userBalances[msg.sender] = 100
+
+IRs:
+REF_2(uint256) -> userBalances[msg.sender]
+REF_2 (->userBalances) := 100(uint256)"];
+6->7;
+7[label="Node Type: EXPRESSION 7
+
+EXPRESSION:
+so.SomeoneFunc()
+
+IRs:
+TMP_2(int256) = HIGH_LEVEL_CALL, dest:so(Someone), function:SomeoneFunc, arguments:[]  "];
+7->8;
+8[label="Node Type: END_IF 8
+"];
+}
