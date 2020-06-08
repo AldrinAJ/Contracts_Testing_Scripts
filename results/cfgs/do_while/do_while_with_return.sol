@@ -4,12 +4,14 @@ contract DAO
     bool success = true;
 
     function withdrawBalance() public {
+        int256 i = 0;
         do {
+            i++;
             if (true)
                 someFunc();
             else
                 return;
-        } while (uint i = 0; i < 5; i++)
+        } while (i < 5);
     }
 
     function someFunc() private
