@@ -5,7 +5,7 @@ contract DAO
     function withdrawBalance() public {
             if (true)
             {
-                (bool success, ) = msg.sender.call.value(amountToWithdraw)(""); // The user's balance is already 0, so future invocations won't withdraw anything
+                (bool success, ) = msg.sender.call.value(amountToWithdraw)("");
                 require(success);
                 uint amountToWithdraw = userBalances[msg.sender];
                 userBalances[msg.sender] = 0;
