@@ -6,25 +6,23 @@ Warning: Function state mutability can be restricted to pure
   |     ^ (Relevant source part starts here and spans across multiple lines).
 
 
-INFO:Detectors:[92m
-Reentrancy in Alice.transfer(address) (1_slither.sol#15-18):
-	External calls:
-	- sample = io.getCustom() (1_slither.sol#16)
-	State variables written after the call(s):
-	- Alice.balanceOf (1_slither.sol#11) in balanceOf[_to] += sample + 1 (1_slither.sol#17)
-Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-2[0m
-INFO:Detectors:[92m
-Pragma version^0.6.4 (1_slither.sol#1) necessitates versions too recent to be trusted. Consider deploying with 0.5.11
-Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity[0m
-INFO:Detectors:[92m
-Parameter Alice.transfer(address)._to (1_slither.sol#15) is not in mixedCase
-Constant Alice._t (1_slither.sol#12) is not in UPPER_CASE_WITH_UNDERSCORES
-Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions[0m
-INFO:Detectors:[92m
-getCustom() should be declared external:
-	- IntegerOverflow.getCustom() (1_slither.sol#5-7)
-transfer(address) should be declared external:
-	- Alice.transfer(address) (1_slither.sol#15-18)
-Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#public-function-that-could-be-declared-as-external[0m
-INFO:Slither:1_slither.sol analyzed (2 contracts with 46 detectors), 6 result(s) found
-INFO:Slither:[94mUse https://crytic.io/ to get access to additional detectors and Github integration[0m
+ERROR:root:Error in 1_slither.sol
+ERROR:root:Traceback (most recent call last):
+  File "/home/ethsec/.local/lib/python3.6/site-packages/slither/__main__.py", line 578, in main_impl
+    (slither_instances, results_detectors, results_printers, number_contracts) = process_all(filename, args, detector_classes, printer_classes)
+  File "/home/ethsec/.local/lib/python3.6/site-packages/slither/__main__.py", line 66, in process_all
+    (slither, current_results_detectors, current_results_printers, current_analyzed_count) = process_single(compilation, args, detector_classes, printer_classes)
+  File "/home/ethsec/.local/lib/python3.6/site-packages/slither/__main__.py", line 56, in process_single
+    return _process(slither, detector_classes, printer_classes)
+  File "/home/ethsec/.local/lib/python3.6/site-packages/slither/__main__.py", line 93, in _process
+    printer_results = slither.run_printers()
+  File "/home/ethsec/.local/lib/python3.6/site-packages/slither/slither.py", line 170, in run_printers
+    return [p.output(self.filename).data for p in self._printers]
+  File "/home/ethsec/.local/lib/python3.6/site-packages/slither/slither.py", line 170, in <listcomp>
+    return [p.output(self.filename).data for p in self._printers]
+  File "/home/ethsec/.local/lib/python3.6/site-packages/slither/printers/functions/cfg.py", line 30, in output
+    content = function.slithir_cfg_to_dot(filename)
+  File "/home/ethsec/.local/lib/python3.6/site-packages/slither/core/declarations/function.py", line 1047, in slithir_cfg_to_dot
+    with open(filename, 'w', encoding='utf8') as f:
+PermissionError: [Errno 13] Permission denied: 'IntegerOverflow-getCustom().dot'
+
