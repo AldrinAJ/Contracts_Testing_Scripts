@@ -15,7 +15,7 @@ contract DAO
             else
             {
                 userBalances[msg.sender] = 100;
-                so.SomeoneFunc()
+                so.SomeoneFunc();
             }
     }
 
