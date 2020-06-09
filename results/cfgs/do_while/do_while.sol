@@ -3,7 +3,8 @@ contract DAO
     mapping (address => uint) private userBalances;
     bool success = true;
 
-    function withdrawBalance() public {
+    function withdrawBalance() public 
+    {
         int256 i = 0;
         do {
             if (true)
