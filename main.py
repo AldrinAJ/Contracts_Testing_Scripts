@@ -13,15 +13,17 @@ def buildExec(contId, solidityName):
 
 def main():
     if len(sys.argv) == 3:
-        contId = sys.argv[1]
+        if (sys.argv[1] == "cfg"):
+            print ("build cfg")
+        
+        else:
+            contId = sys.argv[1]
+            # without ext
+            solidityName = sys.argv[2] + "_" + contId
+            dockerExec = buildExec(contId, solidityName)
+            # Executing the shell command
+            os.system(dockerExec)
 
-        # without ext
-        solidityName = sys.argv[2] + "_" + contId
-        dockerExec = buildExec(contId, solidityName)
-        # Executing the shell command
-        os.system(dockerExec)
-    elif len(sys.argv) == 4:
-        print(sys.argv[2].split("#"))
     else:
         print("Usage: main.py <-i> [containerID]+ [targetLevel]")
 
