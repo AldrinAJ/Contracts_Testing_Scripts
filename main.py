@@ -2,7 +2,7 @@ import sys
 import os
 
 Tools = ["oyente", "mythril", "manticore", "securify", "slither"]
-
+BasePathofRepo = "/app/Contracts_Testing_Scripts/"
 
 def buildExec(contId, solidityName):
     scriptPath = "/app/Contracts_Testing_Scripts/scripts/" + contId + "/run.sh"
@@ -16,7 +16,7 @@ def main():
         if (sys.argv[1] == "cfg"):
             print ("build cfg...")
             solidityName = sys.argv[2]
-            buildcfgExec = "docker exec -it " + "slither" + " bash " + "/app/Contracts_Testing_Scripts/scripts/buildcfg/run.sh" + " " + "/app/Contracts_Testing/results/cfgs/research/" + solidityName + ".sol"
+            buildcfgExec = "docker exec -it " + "slither" + " bash " + BasePathofRepo + "scripts/buildcfg/run.sh" + " " + BasePathofRepo + "/results/cfgs/research/" + solidityName + ".sol"
             os.system(buildcfgExec)
 
         else:
