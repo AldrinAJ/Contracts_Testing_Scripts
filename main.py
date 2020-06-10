@@ -16,7 +16,7 @@ def main():
         if (sys.argv[1] == "cfg"):
             print ("build cfg...")
             solidityName = sys.argv[2]
-            buildcfgExec = "docker exec -it " + "slither" + " bash " + "/app/Contracts_Testing_Scripts/scripts/buildcfg/run.sh" + " " + solidityName + ".sol"
+            buildcfgExec = "docker exec -it " + "slither" + " bash " + "/app/Contracts_Testing_Scripts/scripts/buildcfg/run.sh" + " " + "/app/Contracts_Testing/results/cfgs/research/" + solidityName + ".sol"
             os.system(buildcfgExec)
 
         else:
