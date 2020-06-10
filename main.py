@@ -14,8 +14,11 @@ def buildExec(contId, solidityName):
 def main():
     if len(sys.argv) == 3:
         if (sys.argv[1] == "cfg"):
-            print ("build cfg")
-        
+            print ("build cfg...")
+            solidityName = sys.argv[2]
+            buildcfgExec = "docker exec -it " + "slither" + " bash " + "/app/Contracts_Testing_Scripts/scripts/buildcfg/run.sh" + " " + solidityName + ".sol"
+            os.system(buildcfgExec)
+
         else:
             contId = sys.argv[1]
             # without ext
