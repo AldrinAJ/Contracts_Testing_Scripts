@@ -1,6 +1,6 @@
 pragma solidity ^0.6.4;
 
-import "ERC777.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v3.0.1/contracts/token/ERC777/ERC777.sol";
 
 // Attacker contract
 contract Attacker {
