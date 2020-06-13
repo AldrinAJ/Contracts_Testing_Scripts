@@ -22,7 +22,7 @@ contract Attacker is IERC777Sender {
 
     // ERC777 hook
     function tokensToSend(address, address, address, uint256, bytes calldata, bytes calldata) external {
-        require(msg.sender =  = address(_token), "Hook can only be called by the token");
+        require(msg.sender = address(_token), "Hook can only be called by the token");
             me.withdraw(this, 100);
     }
 
