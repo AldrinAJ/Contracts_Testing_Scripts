@@ -23,7 +23,7 @@ contract Attacker {
 // Lendf.me vulnerable contract
 contract Lendme
 {
-
+    mapping (address => uint) public balances;
     /**
     * @notice supply `amount` of `asset` (which must be supported) to `msg.sender` in the protocol
     * @dev add amount of supported asset to msg.sender's account
@@ -33,8 +33,7 @@ contract Lendme
     */
     function supply(address asset, uint amount) public returns (uint) {
 
-        uint256 currentbal;
-        currentbal = address(this).balance;
+        uint curBal = balances[asset];
 
         /////////////////////////
         // EFFECTS & INTERACTIONS
@@ -45,18 +44,10 @@ contract Lendme
         msg.sender.transfer(amount);
 
         // Save user updates
-        address(this).balance = currentbal + amount;
-
+        balances[asset] = curBal + amount;
         return uint(0); // success
     }
 
-    /**
-     * @notice withdraw `amount` of `asset` from sender's account to sender's address
-     * @dev withdraw `amount` of `asset` from msg.sender's account to msg.sender
-     * @param asset The market asset to withdraw
-     * @param requestedAmount The amount to withdraw (or -1 for max)
-     * @return uint 0=success, otherwise a failure (see ErrorReporter.sol for details)
-     */
     function withdraw(uint requestedAmount) public returns (uint) {
         msg.sender.transfer(requestedAmount);
         return uint(0); // success
