@@ -9,7 +9,7 @@ contract DAO
             i++;
             if (true)
                 someFunc();
-            else
+            else 
                 return;
         } while (i < 5);
     }
