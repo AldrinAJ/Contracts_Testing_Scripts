@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{listings}
+
+\lstset{ 
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  tabsize=2,	                       % sets default tabsize to 2 spaces
+  breaklines=true
+}
+
+\begin{document}
+\begin{lstlisting}[language=Java, frame=single, caption={Problematic Contract}, captionpos = b]
+contract Bank
+{
+  struct Payee {
+    address addr;
+    uint256 value;
+  }
+
+  Payee[] payees; // Storage
+  uint256 nextPayeeIndex;
+
+  function payOut() {
+    uint256 i = nextPayeeIndex;
+    while (i<payees.length && msg.gas > 200000)
+    {
+      payess[i].addr.send(payees[i].value);
+      i++;
+    }
+  }
+}
+\end{lstlisting}
+
+\newpage
+
+\begin{lstlisting}[language=Java, frame=single, caption={Instrumented Contract}, captionpos = b]
+contract Bank
+{
+  function payOut() {
+    if (!checkGas(nextBlockNo,0))
+      Do something that developer wants;
+
+    uint256 i = nextPayeeIndex;
+    if (!checkGas(nextBlockNo, payees.length))
+      Do something;
+    while (i<payees.length && msg.gas > 200000)
+    {      
+      payess[i].addr.send(payees[i].value);
+      i++;
+    }
+  }
+
+  function checkGas(nextBlockNo, itercount)
+  {
+    int["block_count"] gasPriceTable = [19,20000,20,10];
+    if (CFG.isLoop(nextBlockNo))
+    {
+      if (gasPriceTable[nextBlockNo] * itercount) >= gasLeft())
+        return 0;
+    }
+    else
+      if (gasPriceTable[nextBlockNo] >= gasLeft())
+        return 0;
+
+    return 1;
+  }
+}
+\end{lstlisting}
+\end{document}
+%instructions\;
+%\eIf{condition}{
+%        instructions1\;
+%        instructions2\;
+%        }{
+%        instructions3\;
+%        }
+
+
+%payees.length && msg.gas > 200000

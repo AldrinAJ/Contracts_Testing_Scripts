@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{listings}
+
+\lstset{ 
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  tabsize=2,	                       % sets default tabsize to 2 spaces
+  breaklines=true
+}
+
+\begin{document}
+\begin{lstlisting}[language=Java, frame=single, caption={Problematic Contract}, captionpos = b]
+contract DAO
+{
+  mapping (address => uint) private userBalances;
+  
+  function withdrawBalance () public {
+    uint amountTowithdraw = userBalances[msg.sender];
+    (bool success,) = msg.sender.call.value(amountTowithdraw)("");
+    require (success);
+    userBalances[msg.sender] = 0;
+  }
+}
+\end{lstlisting}
+
+\newpage
+
+\begin{lstlisting}[language=Java, frame=single, caption={Instrumented Contract}, captionpos = b]
+  contract DAO
+  {
+    mapping (address => uint) private userBalances;
+    mapping (address => int[size_of_blocks]) private visitMap;
+    a graph object CFG;
+  
+    function withdrawBalance () public {
+      
+      if(!check(1,2))
+        Do something... (e.g., revert()) 
+      uint amountTowithdraw = userBalances[msg.sender];
+      (bool success,) = msg.sender.call.value(amountTowithdraw)("");
+      record(2);
+  
+      if(!check(2,3))
+        Do something... (e.g., revert())
+      require (success);
+      userBalances[msg.sender] = 0;
+      record(3);
+    }
+  
+    function check(cur_block, next_block) {
+      for each (block_no in CFG.next_block(cur_block))
+        if (next_block in CFG.next(cur_block))
+          return 1;
+        else return 0;
+    }
+  
+    function record(cur_block) {
+      visitMap[tx.origin][cur_block] = 1;
+    }
+  }
+}
+\end{lstlisting}
+\end{document}
+%instructions\;
+%\eIf{condition}{
+%        instructions1\;
+%        instructions2\;
+%        }{
+%        instructions3\;
+%        }
+
+
+%payees.length && msg.gas > 200000

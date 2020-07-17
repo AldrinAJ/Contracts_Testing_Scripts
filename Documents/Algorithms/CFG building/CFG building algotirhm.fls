@@ -1,0 +1,42 @@
+PWD /Users/jeongminkim/Documents/GitHub/Contracts_Testing_Scripts/documents
+INPUT /usr/local/texlive/2020/texmf.cnf
+INPUT /usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/jeongminkim/Documents/GitHub/Contracts_Testing_Scripts/documents/CFG building algotirhm.tex
+OUTPUT /Users/jeongminkim/Documents/GitHub/Contracts_Testing_Scripts/documents/CFG building algotirhm.log
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/algorithms/algorithmic.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/xspace.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/xspace.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/relsize/relsize.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/relsize/relsize.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+INPUT /Users/jeongminkim/Documents/GitHub/Contracts_Testing_Scripts/documents/CFG building algotirhm.aux
+INPUT /Users/jeongminkim/Documents/GitHub/Contracts_Testing_Scripts/documents/CFG building algotirhm.aux
+OUTPUT /Users/jeongminkim/Documents/GitHub/Contracts_Testing_Scripts/documents/CFG building algotirhm.aux
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+OUTPUT /Users/jeongminkim/Documents/GitHub/Contracts_Testing_Scripts/documents/CFG building algotirhm.pdf
+INPUT /usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /Users/jeongminkim/Documents/GitHub/Contracts_Testing_Scripts/documents/CFG building algotirhm.aux
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
