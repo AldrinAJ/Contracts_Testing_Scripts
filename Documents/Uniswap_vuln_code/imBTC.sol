@@ -587,15 +587,6 @@ interface IERC1820Registry {
 }
 
 // File: src/erc777/EarnERC777.sol
-
-
-
-
-
-
-
-
-
 contract EarnERC777 is IERC777, IERC20 {
     using SafeMath for uint256;
     using Address for address;
