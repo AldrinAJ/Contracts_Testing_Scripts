@@ -16,7 +16,6 @@
   - [x] re-entrancy
 - [x] Upgrade the python script to support all-in-one test (not important)
 
-
 # Finish
 - [x] Write run.sh for each tool.
 - [x] Grasp how to run each tool and identify paths that each analysis result will be placed.
